@@ -43,7 +43,7 @@ export default async function RegistrationPage({
       <div className="flex flex-col gap-1">
         <h1 className="text-xl font-semibold text-mono">Tạo tài khoản</h1>
         <p className="text-sm text-secondary-foreground">
-          Đăng ký bằng email. Mật khẩu do hệ thống kiểm tra.
+          Đăng ký bằng tên đăng nhập, email và mật khẩu. Mật khẩu do hệ thống kiểm tra.
         </p>
       </div>
       <FlowForm ui={flow.ui} />

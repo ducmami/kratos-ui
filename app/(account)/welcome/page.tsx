@@ -44,7 +44,7 @@ export default async function WelcomePage({
             <CardTitle>Cài đặt</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-3 text-sm text-secondary-foreground">
-            Đổi mật khẩu. Email hiện chưa đổi được.
+            Đổi mật khẩu. Email và tên đăng nhập hiện chưa đổi được.
             <Button asChild variant="outline">
               <Link href="/settings">Mở cài đặt</Link>
             </Button>

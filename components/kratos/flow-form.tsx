@@ -32,8 +32,8 @@ const GROUP_ORDER: UiNodeGroupEnum[] = [
   "saml",
   "default",
   "identifier_first",
-  "password",
   "profile",
+  "password",
   "code",
   "link",
   "totp",
@@ -117,7 +117,23 @@ function scalarValue(value: unknown): string {
 }
 
 function nodeLabel(node: UiNode): string {
+  if (node.attributes.node_type === "input" && node.attributes.name === "identifier") {
+    return "Email hoặc tên đăng nhập";
+  }
   return node.meta.label?.text || "";
+}
+
+function fieldHint(name: string, locked: boolean): string | undefined {
+  if (locked && name === "traits.email") {
+    return "Chưa đổi được email.";
+  }
+  if (locked && name === "traits.username") {
+    return "Chưa đổi được tên đăng nhập.";
+  }
+  if (name === "traits.username") {
+    return "Chữ thường, bắt đầu bằng chữ cái, chỉ a-z và số, 3–50 ký tự.";
+  }
+  return undefined;
 }
 
 function callTrigger(
@@ -305,11 +321,7 @@ function InputNode({
           label={label}
           id={id}
           messages={node.messages}
-          hint={
-            locked && attrs.name === "traits.email"
-              ? "Chưa đổi được email."
-              : undefined
-          }
+          hint={fieldHint(attrs.name, locked)}
         >
           {attrs.options && attrs.options.length > 0 ? (
             <select

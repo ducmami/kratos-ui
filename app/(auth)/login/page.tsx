@@ -83,7 +83,7 @@ export default async function LoginPage({
       <div className="flex flex-col gap-1">
         <h1 className="text-xl font-semibold text-mono">Đăng nhập</h1>
         <p className="text-sm text-secondary-foreground">
-          Dùng email và mật khẩu của tài khoản Viết Sớ.
+          Dùng tên đăng nhập hoặc email và mật khẩu của tài khoản Viết Sớ.
         </p>
       </div>
       <FlowForm ui={flow.ui} />

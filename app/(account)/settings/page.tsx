@@ -50,11 +50,11 @@ export default async function SettingsPage({
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl font-semibold text-mono">Cài đặt tài khoản</h1>
         <p className="text-sm text-secondary-foreground">
-          Email hiện chưa đổi được. Đổi mật khẩu có thể yêu cầu đăng nhập lại.
+          Email và tên đăng nhập hiện chưa đổi được. Đổi mật khẩu có thể yêu cầu đăng nhập lại.
         </p>
       </div>
       <div className="rounded-xl border border-border bg-card p-6">
-        <FlowForm ui={flow.ui} readOnlyNames={["traits.email"]} />
+        <FlowForm ui={flow.ui} readOnlyNames={["traits.email", "traits.username"]} />
       </div>
     </>
   );
